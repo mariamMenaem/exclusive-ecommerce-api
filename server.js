@@ -21,6 +21,8 @@ app.use("/api/products", productRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
+
+module.exports = app;
 app.listen(PORT, async () => {
   try {
     await sequelize.authenticate();
