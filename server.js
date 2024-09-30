@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/auth");
 const productRoutes = require("./routes/product");
+const wishlistRoutes = require("./routes/wishlist");
 const sequelize = require("./config/database");
 const modelAssociation = require("./config/modelsAssociation");
 require("dotenv").config();
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/wishlist", wishlistRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
